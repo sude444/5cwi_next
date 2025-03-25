@@ -4,5 +4,8 @@ import React from 'react';
 type Props = { car: Car };
 
 export default function Card({ car }: Props) {
-    return <div className='bg-teal-600 border p-4'>Card:{car.name}</div>;
+    return <div className='bg-teal-600 border p-4'>
+        <h2>{car.name}</h2>
+        <div>{car.color}</div>
+    </div>;
 }
