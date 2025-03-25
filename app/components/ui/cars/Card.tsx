@@ -1,11 +1,22 @@
+"use client";
 import { Car } from '@/lib/types/types';
-import React from 'react';
+import React, { useState } from 'react';
 
 type Props = { car: Car };
 
 export default function Card({ car }: Props) {
-    return <div className='bg-teal-600 border p-4'>
-        <h2>{car.name}</h2>
-        <div>{car.color}</div>
-    </div>;
+    const [isActive, setIsActive] = useState(false);
+
+    return (
+        <div
+            className={`border shadow p-4 hover:cursor-pointer ${isActive ? "bg-pink-500" : "bg-teal-600"}`}
+            onClick={() => {
+                setIsActive(!isActive);
+            }}
+        >
+            <h2 className='font-bold text-3xl'>{car.name}</h2>
+            <div>{car.color}</div>
+            {isActive ? "active" : "inactive"}
+        </div>
+    )
 }
