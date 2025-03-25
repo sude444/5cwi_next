@@ -1,7 +1,8 @@
+import { Car } from '@/lib/types/types';
 import React from 'react';
 
-type Props = { name?: String };
+type Props = { car: Car };
 
-export default function Card({ name }: Props) {
-    return <div>Card:{name}</div>;
+export default function Card({ car }: Props) {
+    return <div className='bg-teal-600 border p-4'>Card:{car.name}</div>;
 }
